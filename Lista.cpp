@@ -1,5 +1,5 @@
 //
-// Created by Windows on 21/07/2025.
+// Created by Alexander Narváez on 21/07/2025.
 //
 
 #include "Lista.h"
