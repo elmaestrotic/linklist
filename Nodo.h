@@ -18,7 +18,7 @@ public:
 
     Nodo* getLink() const;
 
-    void ponerLink(Nodo* link);
+    void setLink(Nodo* link);
 };
 
 

@@ -9,7 +9,7 @@
 using namespace std;
 
 // Constructor: inicializa la lista vacía
-Lista::Lista() : primero(nullptr) {}
+Lista::Lista() : head(nullptr) {}
 
 // Crea una lista solicitando valores al usuario hasta que ingrese -1
 void Lista::crearLista() {
@@ -22,26 +22,26 @@ void Lista::crearLista() {
 
 // Inserta un nodo al inicio de la lista
 void Lista::insertarCabeza(int valor) {
-    primero = new Nodo(valor, primero);
+    head = new Nodo(valor, head);
 }
 
 // Inserta un nodo al final de la lista
 void Lista::insertarFinal(int valor) {
     Nodo* nuevo = new Nodo(valor);
-    if (!primero) {
-        primero = nuevo;
+    if (!head) {
+        head = nuevo;
         return;
     }
     Nodo* ultimo = getUltimo();
-    ultimo->ponerLink(nuevo);
+    ultimo->setLink(nuevo);
 }
 
 // Obtiene el último nodo de la lista
 Nodo* Lista::getUltimo() {
-    if (!primero) {
+    if (!head) {
         throw runtime_error("Lista vacía");
     }
-    Nodo* actual = primero;
+    Nodo* actual = head;
     while (actual->getLink()) {
         actual = actual->getLink();
     }
@@ -54,12 +54,12 @@ void Lista::insertarDespues(Nodo* anterior, int valor) {
         throw runtime_error("Nodo anterior no válido");
     }
     Nodo* nuevo = new Nodo(valor, anterior->getLink());
-    anterior->ponerLink(nuevo);
+    anterior->setLink(nuevo);
 }
 
 // Busca un nodo con el valor especificado
 Nodo* Lista::buscar(int valor) {
-    for (Nodo* actual = primero; actual; actual = actual->getLink()) {
+    for (Nodo* actual = head; actual; actual = actual->getLink()) {
         if (actual->getData() == valor) {
             return actual;
         }

@@ -9,7 +9,7 @@
 
 class Lista {
 private:
-    Nodo* primero;
+    Nodo* head;
 public:
     Lista();
     void crearLista();
