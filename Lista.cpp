@@ -69,13 +69,13 @@ Nodo* Lista::buscar(int valor) {
 
 // Muestra la lista con valores separados por '|'
 void Lista::visualizar() {
-    if (!primero) {
+    if (!head) {
         std::cout << "Lista vacía\n";
         return;
     }
 
     int contador = 0;
-    for (Nodo* actual = primero; actual; actual = actual->getLink()) {
+    for (Nodo* actual = head; actual; actual = actual->getLink()) {
         // Imprime el dato, no el enlace
         std::cout << actual->getData();
 
