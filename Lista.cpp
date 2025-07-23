@@ -95,7 +95,7 @@ void Lista::visualizar() {
 
 // Elimina un nodo con el valor especificado
 void Lista::eliminar(int valor) {
-    Nodo* actual = primero;
+    Nodo* actual = head;
     Nodo* anterior = nullptr;
 
     while (actual && actual->getData() != valor) {
@@ -107,10 +107,10 @@ void Lista::eliminar(int valor) {
         return; // Valor no encontrado
     }
 
-    if (actual == primero) {
-        primero = actual->getLink();
+    if (actual == head) {
+        head = actual->getLink();
     } else {
-        anterior->ponerLink(actual->getLink());
+        anterior->setLink(actual->getLink());
     }
     delete actual;
 }
