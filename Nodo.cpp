@@ -18,6 +18,6 @@ Nodo *Nodo::getLink() const  {
 }
 
 // Cambia el puntero al siguiente nodo
-void Nodo::ponerLink(Nodo *link) {
+void Nodo::setLink(Nodo *link) {
     this->link = link;
 }
